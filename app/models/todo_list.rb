@@ -17,4 +17,26 @@ class TodoList < ApplicationRecord
     # Get value from variable or if is null calculate it
     @total_items ||= todo_items.count
   end
+
+  def status
+    #Get use-cases of percent
+    case percent_complete.to_i
+    when 0
+      'Not started'
+    when 100
+      'Complete'
+    else
+      'In progress'
+    end
+  end
+  def badge_color
+    case percent_complete.to_i
+    when 0
+      'dark'
+    when 100
+      'info'
+    else
+      'primary'
+    end
+  end
 end

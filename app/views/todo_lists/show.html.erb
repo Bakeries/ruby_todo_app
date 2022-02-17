@@ -2,6 +2,7 @@
   <div>
     <h5 class="m-1">
       <b><%= @todo_list.title %></b>
+      <span class="btn btn-primary input-group-btn-<%= @todo_list.badge_color %> "> <%= @todo_list.status %></span>
     </h5>
     <p class="text-secondary m-0">
       <small>
