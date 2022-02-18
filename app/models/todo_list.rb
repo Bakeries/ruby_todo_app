@@ -34,7 +34,7 @@ class TodoList < ApplicationRecord
     when 0
       'dark'
     when 100
-      'info'
+      'success'
     else
       'primary'
     end
