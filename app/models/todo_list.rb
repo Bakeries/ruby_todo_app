@@ -19,7 +19,7 @@ class TodoList < ApplicationRecord
   end
 
   def status
-    #Get use-cases of percent
+    # Returning status value based on percentage_complete
     case percent_complete.to_i
     when 0
       'Not started'
@@ -29,7 +29,9 @@ class TodoList < ApplicationRecord
       'In progress'
     end
   end
+
   def badge_color
+    # Returning badge_color value based on percentage_complete
     case percent_complete.to_i
     when 0
       'dark'
