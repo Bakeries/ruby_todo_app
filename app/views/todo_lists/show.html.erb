@@ -51,9 +51,17 @@
             <span>
               <%= todo_item.description %>
             </span>
-            <%= link_to "", class: 'btn btn-info', data:{ reflex: "click->TodoItemReflex#completed", id: todo_item.id } do %>
-              <i class='fas fa-check'></i>
-            <% end %>
+            <div class="d-flex">
+              <%= link_to "#", class: 'btn btn-info', data:{ reflex: "click->TodoItemReflex#completed", id: todo_item.id } do %>
+                <i class='fas fa-check'></i>
+              <% end %>
+              <%= link_to "", class: 'btn btn-warning' do%>
+                <i class='fas fa-pen'></i>
+              <% end %>
+              <%= link_to "#", class: 'btn btn-danger', data:{ reflex: "click->TodoItemReflex#delete", id: todo_item.id } do %>
+                <i class='fas fa-trash'></i>
+              <% end %>
+            </div>
           </div>
         </li>
       <% end %>
