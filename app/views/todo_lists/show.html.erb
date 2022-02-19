@@ -1,20 +1,27 @@
 <div class="card-header d-flex justify-content-between">
-  <div>
-    <h5 class="m-0">
-      <b><%= @todo_list.title %></b>
-      <span class="badge bg-<%= @todo_list.badge_color %> rounded-pill">
+  <div class="col-1">
+    <%= link_to todo_lists_path, class: 'btn btn-dark' do %>
+      <i class="fa-solid fa-chevron-left"></i>
+    <% end %>
+  </div>
+  <div class="col-11 d-flex justify-content-between m-0">
+    <div>
+      <h5 class="m-0">
+        <b><%= @todo_list.title %></b>
+        <span class="badge bg-<%= @todo_list.badge_color %> rounded-pill">
         <%= @todo_list.status %>
       </span>
-    </h5>
-    <p class="text-secondary m-0">
-      <small>
-        <%= @todo_list.percent_complete %>% Complete (<%= @todo_list.completed_items %>/<%= @todo_list.total_items %> Todo Items)
-      </small>
-    </p>
-  </div>
+      </h5>
+      <p class="text-secondary m-0">
+        <small>
+          <%= @todo_list.percent_complete %>% Complete (<%= @todo_list.completed_items %>/<%= @todo_list.total_items %> Todo Items)
+        </small>
+      </p>
+    </div>
 
-  <div>
-    <%= link_to 'Edit', edit_todo_list_path(@todo_list), class: 'btn btn-secondary' %>
+    <div>
+      <%= link_to 'Edit', edit_todo_list_path(@todo_list), class: 'btn btn-secondary' %>
+    </div>
   </div>
 </div>
 
