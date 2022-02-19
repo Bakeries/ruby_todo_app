@@ -1,6 +1,12 @@
-<h1>Editing todo_item</h1>
+<div class="card-header d-flex justify-content-between">
+  <div class="col-1">
+    <%= link_to @todo_list, class: 'btn btn-dark' do %>
+      <i class="fa-solid fa-chevron-left"></i>
+    <% end %>
+  </div>
+  <h1 class="m-0 col-11 text-dark">Edit Item</h1>
+</div>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', [@todo_item.todo_list, @todo_item] %> |
-<%= link_to 'Back', todo_list_todo_items_path(@todo_item.todo_list) %>
+<div class="card-body">
+  <%= render 'form' %>
+</div>

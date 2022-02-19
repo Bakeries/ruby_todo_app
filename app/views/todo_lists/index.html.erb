@@ -23,8 +23,17 @@
             </p>
           </div>
         <% end %>
-        <div>
-          <%= link_to 'Edit', edit_todo_list_path(todo_list), class: 'btn btn-secondary' %>
+        <div class="d-flex">
+          <%= link_to  edit_todo_list_path(todo_list), class: 'btn btn-warning' do%>
+            <i class='fas fa-pen'></i>
+          <% end %>
+          <%= link_to "#", class: 'btn btn-danger',
+                      data:{
+                        confirm: "Are you sure?",
+                        reflex: "confirm:complete->TodoListReflex#delete",
+                        id: todo_list.id } do %>
+            <i class='fas fa-trash'></i>
+          <% end %>
         </div>
       </li>
     <% end %>
