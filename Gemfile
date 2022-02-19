@@ -57,4 +57,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
 gem 'nested_scaffold'
+
+gem "redis", "~> 4.6"
 gem "stimulus_reflex", "~> 3.4"
