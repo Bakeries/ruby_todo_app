@@ -1,23 +1,10 @@
 class TodoItemsController < ApplicationController
   before_action :set_todo_list
-  before_action :set_todo_item, only: [:show, :edit, :update, :destroy]
-
-  # GET todo_lists/1/todo_items
-  def index
-    @todo_items = @todo_list.todo_items
-  end
-
-  # GET todo_lists/1/todo_items/1
-  def show
-  end
+  before_action :set_todo_item, only: [:edit, :update, :destroy]
 
   # GET todo_lists/1/todo_items/new
   def new
     @todo_item = @todo_list.todo_items.build
-  end
-
-  # GET todo_lists/1/todo_items/1/edit
-  def edit
   end
 
   # POST todo_lists/1/todo_items
@@ -34,7 +21,7 @@ class TodoItemsController < ApplicationController
   # PUT todo_lists/1/todo_items/1
   def update
     if @todo_item.update(todo_item_params)
-      redirect_to(@todo_list)
+      redirect_to(@todo_item.todo_list)
     else
       render action: 'edit'
     end
