@@ -11,12 +11,9 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="input-group flex-nowrap">
+    <span class="input-group-text" id="addon-wrapping">Title</span>
+    <%= form.text_field :title, class: 'form-control', placeholder: 'List title'%>
+    <%= form.submit "Add", class: 'btn btn-primary input-group-btn' %>
   </div>
 <% end %>
