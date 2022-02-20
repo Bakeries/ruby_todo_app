@@ -1,5 +1,6 @@
 class TodoList < ApplicationRecord
   # When todo_list os destroyed all todo_items that belongs to list will get destroyed as well.
+  belongs_to :user
   has_many :todo_items, :dependent => :destroy
 
   def percent_complete
