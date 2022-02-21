@@ -1,0 +1,8 @@
+<div class="card-header d-flex justify-content-between">
+  <h5 class="m-0 text-dark">
+    <% if Current.user %>
+      <%= Current.user.username %>
+    <% end %>
+  </h5>
+  <%= link_to 'Logout', auth_logout_path, class: 'btn btn-danger btn-sm' %>
+</div>
