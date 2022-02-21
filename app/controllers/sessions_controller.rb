@@ -1,6 +1,11 @@
 class SessionsController < ApplicationController
   def index
-
+    # In case user is logged in redirect to todo_lists_path
+    if session[:user_id]
+      # Setting logged in user
+      Current.user = User.find_by(id: session[:user_id])
+      redirect_to todo_lists_path
+    end
   end
 
   def login
@@ -21,6 +26,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to auth_login_path, notice: "Logged out"
+    redirect_to auth_login_path
   end
 end

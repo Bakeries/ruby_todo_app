@@ -1,5 +1,11 @@
 class UsersController < ApplicationController
   def new
+    # In case user is logged in redirect to todo_lists_path
+    if session[:user_id]
+      # Setting logged in user
+      Current.user = User.find_by(id: session[:user_id])
+      redirect_to todo_lists_path
+    end
     @user = User.new
   end
 
