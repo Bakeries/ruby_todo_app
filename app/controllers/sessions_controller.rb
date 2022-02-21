@@ -1,8 +1,6 @@
 class SessionsController < ApplicationController
   def index
-    if session[:user_id]
-      @user = User.find_by(id: session[:user_id])
-    end
+
   end
 
   def login
@@ -17,7 +15,7 @@ class SessionsController < ApplicationController
     else
       #error massage fail
       flash[:alert] = "Invalid credentials"
-      render :login
+      render :index
     end
   end
 
