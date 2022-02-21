@@ -11,21 +11,17 @@ Rails.application.routes.draw do
   root 'sessions#index'
 
   #users routes
-  resources :users, only: [:new, :create, :edit, :update, :show, :destroy]
+  resources :users, only: [:new, :create]
 
-  #sessions routes
+  # Login routes
   get '/auth/login', to: 'sessions#index'
   post '/auth/login', to: 'sessions#login'
 
-  get '/signup', to: 'users#new' # getting url
+  # Signup routes
+  get '/signup', to: 'users#new' # displaying signup ui
   post '/signup', to: 'users#create' # save user to db
 
-  post '/auth/logout', to: 'sessions#destroy'
-  get '/auth/logout', to: 'sessions#destroy'
-
-  # /todos get and post
-  # get '/todos', to: 'todo_lists#index'
-  # post '/todos/new', to: 'todo_lists#new'
-
-  # /todos/:id get, put, delete
+  # Logout routes
+  post '/auth/logout', to: 'sessions#destroy' # executing method destroy
+  get '/auth/logout', to: 'sessions#destroy' # calling method destroy
 end
