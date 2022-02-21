@@ -61,3 +61,7 @@ gem 'nested_scaffold'
 
 gem "redis", "~> 4.6"
 gem "stimulus_reflex", "~> 3.4"
+
+gem "rspec-rails", "~> 5.1"
+
+gem "pg"
