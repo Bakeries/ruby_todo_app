@@ -23,5 +23,5 @@ test:
 production:
   <<: *default
   database: db/sample_production
-  username: sample
-  password: <%= ENV['SAMPLE_DATABASE_PASSWORD'] %>
+  username: avafyfcycppuhi
+  password: "0dfb02e3135104c2447e6eec16140dfb37c1fba2b4c7288dbfd765a500b29cf4"
