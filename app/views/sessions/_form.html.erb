@@ -1,0 +1,29 @@
+<%= form_with url: auth_login_path  do |form| %>
+  <%# if user.errors.any? %>
+<!--    <div id="error_explanation">-->
+<!--      <h2><%#= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>-->
+
+<!--      <ul>-->
+        <%# user.errors.each do |error| %>
+<!--          <li><%#= error.full_message %></li>-->
+        <%# end %>
+<!--      </ul>-->
+<!--    </div>-->
+  <%# end %>
+  <div class="input-group flex-nowrap mb-3">
+    <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-user"></i></span>
+    <%= form.text_field :username, class: 'form-control', placeholder: 'Username'%>
+  </div>
+
+  <div class="input-group flex-nowrap mb-3">
+    <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-lock"></i></span>
+    <%= form.password_field :password, class: 'form-control', placeholder: 'Password'%>
+  </div>
+
+  <%= form.submit "Login", class: 'btn btn-primary input-group' %>
+
+  <small>
+    <%= link_to "Don't have an account? Register now!", signup_path, class: 'link-primary' %>
+  </small>
+
+<% end %>
