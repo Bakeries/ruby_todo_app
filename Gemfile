@@ -57,7 +57,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'nested_scaffold'
 
 # Use Redis adapter to run Action Cable in production
-gem "redis", "~> 4.6"
+gem "redis", ">= 4.0", :require => ["redis", "redis/connection/hiredis"]
+gem "hiredis"
 gem 'redis-session-store'
 gem "stimulus_reflex", "~> 3.4"
 
