@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2022_02_21_020844) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "todo_items", force: :cascade do |t|
     t.text "description"
     t.boolean "completed"
